@@ -62,6 +62,7 @@ public class DataGenerator {
 
         }
     }
+
     @Value
     public static class UserInfo {
         String city;

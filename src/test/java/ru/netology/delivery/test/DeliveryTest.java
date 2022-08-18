@@ -42,12 +42,12 @@ class DeliveryTest {
         $x("//*[contains(text(),'Успешно!')]").shouldBe(Condition.visible);
         $(".notification__content")
                 .shouldHave(Condition.text("Встреча успешно запланирована на " + generateDate(daysToAddForFirstMeeting)));
-                //.shouldBe(Condition.visible);
+        //.shouldBe(Condition.visible);
         $("[data-test-id=date] .input__control").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id=date] .input__control").doubleClick().sendKeys(secondMeetingDate);
         $(By.className("button__text")).click();
         //$(".notification__content")
-                //.shouldHave(Condition.text("У вас уже запланирована встреча на другую дату. Перепланировать?")).shouldBe(Condition.visible);
+        //.shouldHave(Condition.text("У вас уже запланирована встреча на другую дату. Перепланировать?")).shouldBe(Condition.visible);
         //$(By.className("notification__content")).shouldHave(Condition.text("Необходимо подтверждение")).shouldBe(Condition.visible);
         $x("//span[contains(text(),'Перепланировать')]").click();
         //$(By.className("button")).click();
