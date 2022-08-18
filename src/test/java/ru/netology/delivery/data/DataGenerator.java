@@ -5,6 +5,7 @@ import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Random;
 
 public class DataGenerator {
@@ -30,15 +31,16 @@ public class DataGenerator {
     public static String generateName(String locale) {
         // TODO: добавить логику для объявления переменной name и задания её значения, для генерации можно
         // использовать Faker
-        Faker faker = new Faker();
-        String name = faker.name().fullName();
+        //Faker faker = new Faker();
+        Faker faker = new Faker(new Locale("ru"));
+        String name = faker.name().lastName() + " " + faker.name().firstName();
         return name;
     }
 
     public static String generatePhone(String locale) {
         // TODO: добавить логику для объявления переменной phone и задания её значения, для генерации можно
         // использовать Faker
-        Faker faker = new Faker();
+        Faker faker = new Faker(new Locale("ru"));
         String phone = faker.phoneNumber().phoneNumber();
         return phone;
     }
